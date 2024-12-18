@@ -1,6 +1,6 @@
 import { Jogo } from "../model/Jogo";
 
-export interface ProdutoRepository {
+export interface JogoRepository {
   listarTodosJogos(): void;
   listarJogoPeloId(id_jogo: number): void;
   cadastrarJogo(jogo: Jogo): void;
