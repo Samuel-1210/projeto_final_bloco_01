@@ -29,7 +29,7 @@ export class JogoFisico extends Jogo {
 
   public visualizar() {
     try {
-      const midias  = ["DVD", "CD", "BluRay"];
+      const midias = ["DVD", "CD", "BluRay"];
       var midia: string = "";
 
       switch (this._midia) {

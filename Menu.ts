@@ -1,6 +1,6 @@
-import { colors } from "./util/Colors";
+import { colors } from "./src/util/Colors";
 import readlinesync = require("readline-sync");
-import { keyPress, sobre } from "./util/FuncoesRepetidas";
+import { keyPress, sobre } from "./src/util/FuncoesRepetidas";
 
 export function main() {
   let opcao;
