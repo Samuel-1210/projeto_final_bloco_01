@@ -1,5 +1,7 @@
 import { Jogo } from "../model/Jogo";
 
+// Define a interface JogoRepository para padronizar as operações relacionadas ao gerenciamento de Jogos
+
 export interface JogoRepository {
   listarTodosJogos(): void;
   listarJogoPeloId(id_jogo: number): void;

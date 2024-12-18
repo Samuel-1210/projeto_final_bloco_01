@@ -1,10 +1,13 @@
 import { colors } from "../util/Colors";
 import { Jogo } from "./Jogo";
+// Classe que representa um tipo específico de Jogo: Jogo Fisico
+// Extende a classe Jogo e adiciona as propriedades: Peso(g) e Midia
 
 export class JogoFisico extends Jogo {
   private _peso: number;
   private _midia: number;
 
+  // construtor que inicia as propriedades de um jogo fisico
   constructor(
     id_jogo: number,
     titulo_jogo: string,
@@ -32,6 +35,7 @@ export class JogoFisico extends Jogo {
       const midias = ["DVD", "CD", "BluRay"];
       var midia: string = "";
 
+      // de acordo com a opção inserida pelo usuário no menu, a exibição do Visualizar() vai se basear nos textos
       switch (this._midia) {
         case 1:
           midia = "DVD";

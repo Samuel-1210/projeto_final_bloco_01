@@ -1,6 +1,7 @@
 import { colors } from "../util/Colors";
 import { formatToBRL } from "../util/FuncoesRepetidas";
 
+// Classe super que serve como base para herança das outras classes
 export abstract class Jogo {
   private _id_jogo: number;
   private _titulo_jogo: string;
@@ -9,6 +10,7 @@ export abstract class Jogo {
   private _desenvolvedor_jogo: string;
   private _multiplayer: number;
 
+  // metodo construtor com os atributos base de um jogo
   constructor(
     id_jogo: number,
     titulo_jogo: string,
@@ -74,6 +76,10 @@ export abstract class Jogo {
   }
 
   public visualizar(): void {
+    // Ambos switch's mudam a exibição de multiplayer e Genero
+    // Ambos são inseridos pelo usuario como numeros
+    // Aqui são tratados e definidos como texto para serem exibidos
+
     const multiplayer = ["Não", "Sim"];
     const generos = ["RPG", "Corrida", "Esporte", "Ação", "Aventura"];
 
@@ -100,17 +106,17 @@ export abstract class Jogo {
 
     switch (this._multiplayer) {
       case 1:
-        ehMultiplayer = "Sim";
+        ehMultiplayer = "Não";
         break;
       case 2:
-        ehMultiplayer = "Não";
+        ehMultiplayer = "Sim";
         break;
     }
     try {
       console.log(colors.fg.greenstrong + "\n\n===========================");
       console.log("Propriedades do Jogo");
       console.log("===========================" + colors.reset);
-      console.log(colors.fg.green + "ID do Jogo " + this._id_jogo);
+      console.log(colors.fg.green + "ID do Jogo: " + this._id_jogo);
       console.log("Titulo : " + this._titulo_jogo);
       console.log("Genero: " + qualGenero);
       console.log("Preço: " + formatToBRL(this._preco_jogo));

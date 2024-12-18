@@ -1,10 +1,13 @@
 import { colors } from "../util/Colors";
 import { Jogo } from "./Jogo";
 
+// Classe que representa um tipo específico de Jogo: Jogo Digital
+// Extende a classe Jogo e adiciona as propriedades: Tamanho(GB) e Plataforma
 export class JogoDigital extends Jogo {
   private _tamanhoGB: number;
   private _plataforma: number;
 
+  // construtor que inicia as propriedades de um jogo digital
   constructor(
     id_jogo: number,
     titulo_jogo: string,
@@ -32,6 +35,7 @@ export class JogoDigital extends Jogo {
       const plataformas = ["XBOX", "PlayStation", "PC"];
       var plataforma: string = "";
 
+      // de acordo com a opção inserida pelo usuário no menu, a exibição do Visualizar() vai se basear nos textos
       switch (this._plataforma) {
         case 1:
           plataforma = "XBOX";
