@@ -4,6 +4,7 @@ import { keyPress, sobre } from "./util/FuncoesRepetidas";
 
 export function main() {
   let opcao;
+
   while (true) {
     // Menu de opções do sistema
 
@@ -38,6 +39,7 @@ export function main() {
           "\nListar todos os jogos\n",
           colors.reset
         );
+
         break;
 
       case 2:
