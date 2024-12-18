@@ -2,13 +2,13 @@ import { colors } from "../util/Colors";
 import { Jogo } from "./Jogo";
 
 export class JogoFisico extends Jogo {
-  private _peso: Number;
+  private _peso: number;
   private _midia: number;
 
   constructor(
     id_jogo: number,
     titulo_jogo: string,
-    genero_jogo: string,
+    genero_jogo: number,
     preco_jogo: number,
     desenvolvedor_jogo: string,
     multiplayer: number,
@@ -47,8 +47,9 @@ export class JogoFisico extends Jogo {
       }
 
       super.visualizar();
-      console.log(colors.fg.red + "Peso: " + this._peso);
-      console.log(colors.fg.red + "Tipo de Midia" + midia + colors.reset);
+      console.log(colors.fg.green + "Peso: " + this._peso + "g");
+      console.log(colors.fg.green + "Tipo de Midia: " + midia);
+      console.log(colors.fg.green + "Forma: Fisica " + colors.reset);
     } catch (error) {
       console.log("Erro ao imprimir informação de Jogo Fisico: ", error);
     }

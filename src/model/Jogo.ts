@@ -4,7 +4,7 @@ import { formatToBRL } from "../util/FuncoesRepetidas";
 export abstract class Jogo {
   private _id_jogo: number;
   private _titulo_jogo: string;
-  private _genero_jogo: string;
+  private _genero_jogo: number;
   private _preco_jogo: number;
   private _desenvolvedor_jogo: string;
   private _multiplayer: number;
@@ -12,7 +12,7 @@ export abstract class Jogo {
   constructor(
     id_jogo: number,
     titulo_jogo: string,
-    genero_jogo: string,
+    genero_jogo: number,
     preco_jogo: number,
     desenvolvedor_jogo: string,
     multiplayer: number
@@ -33,7 +33,7 @@ export abstract class Jogo {
     return this._titulo_jogo;
   }
 
-  public get genero_jogo(): string {
+  public get genero_jogo(): number {
     return this._genero_jogo;
   }
 
@@ -49,7 +49,7 @@ export abstract class Jogo {
     this._titulo_jogo = value;
   }
 
-  public set genero_jogo(value: string) {
+  public set genero_jogo(value: number) {
     this._genero_jogo = value;
   }
 
@@ -75,7 +75,28 @@ export abstract class Jogo {
 
   public visualizar(): void {
     const multiplayer = ["Não", "Sim"];
+    const generos = ["RPG", "Corrida", "Esporte", "Ação", "Aventura"];
+
     var ehMultiplayer: string = "";
+    var qualGenero: string = "";
+
+    switch (this._genero_jogo) {
+      case 1:
+        qualGenero = "RPG";
+        break;
+      case 2:
+        qualGenero = "Corrida";
+        break;
+      case 3:
+        qualGenero = "Esporte";
+        break;
+      case 4:
+        qualGenero = "Ação";
+        break;
+      case 5:
+        qualGenero = "Aventura";
+        break;
+    }
 
     switch (this._multiplayer) {
       case 1:
@@ -91,7 +112,7 @@ export abstract class Jogo {
       console.log("===========================" + colors.reset);
       console.log(colors.fg.green + "ID do Jogo " + this._id_jogo);
       console.log("Titulo : " + this._titulo_jogo);
-      console.log("Genero: " + this._genero_jogo);
+      console.log("Genero: " + qualGenero);
       console.log("Preço: " + formatToBRL(this._preco_jogo));
       console.log("Desenvoldedor: " + this._desenvolvedor_jogo);
       console.log("Multiplayer: " + ehMultiplayer) + colors.reset;

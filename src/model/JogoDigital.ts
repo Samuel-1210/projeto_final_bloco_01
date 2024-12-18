@@ -2,13 +2,13 @@ import { colors } from "../util/Colors";
 import { Jogo } from "./Jogo";
 
 export class JogoDigital extends Jogo {
-  private _tamanhoGB: Number;
+  private _tamanhoGB: number;
   private _plataforma: number;
 
   constructor(
     id_jogo: number,
     titulo_jogo: string,
-    genero_jogo: string,
+    genero_jogo: number,
     preco_jogo: number,
     desenvolvedor_jogo: string,
     multiplayer: number,
@@ -47,8 +47,9 @@ export class JogoDigital extends Jogo {
       }
 
       super.visualizar();
-      console.log(colors.fg.red + "Tamanho em GB" + this._tamanhoGB);
-      console.log(colors.fg.red + "Plataforma" + plataforma + colors.reset);
+      console.log(colors.fg.green + "Tamanho em GB: " + this._tamanhoGB + "GB");
+      console.log(colors.fg.green + "Plataforma: " + plataforma);
+      console.log(colors.fg.green + "Forma: Digital " + colors.reset);
     } catch (error) {
       console.log("Erro ao imprimir informação de Jogo Digital: ", error);
     }
